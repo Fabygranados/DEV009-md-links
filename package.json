@@ -4,8 +4,25 @@
   "engines": {
     "node": ">=16.x"
   },
+  "scripts": {
+    "test": "jest --coverage",
+    "eslint": "eslint --ext .js ."
+  },
   "bootcamp": {
     "createdAt": "2023-08-22T22:00:38.678Z",
     "commit": "24f5a51ee0a15f345b59fcd2ef44c3616abdfce5"
-  }
+  },
+  "dependencies": {
+    "jest": "^29.6.4",
+    "test": "^3.3.0"
+  },
+  "description": "Herramienta para Devs MarkDown Links",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "test": "test"
+  },
+  "devDependencies": {},
+  "author": "Faby Granados",
+  "license": "ISC"
 }

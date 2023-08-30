@@ -1,5 +1,8 @@
 {
-  "name": "md-links",
+  "name": "faby-granados",
+  "jest": {
+    "verbose": true
+  },
   "version": "0.1.0",
   "engines": {
     "node": ">=16.x"
@@ -14,6 +17,7 @@
   },
   "dependencies": {
     "jest": "^29.6.4",
+    "markdown-it": "^13.0.1",
     "test": "^3.3.0"
   },
   "description": "Herramienta para Devs MarkDown Links",
@@ -22,7 +26,17 @@
     "doc": "docs",
     "test": "test"
   },
-  "devDependencies": {},
   "author": "Faby Granados",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "\"github.com/Fabygranados/DEV009-md-links\""
+  },
+  "keywords": [
+    "markdown",
+    "links",
+    "links",
+    "npm",
+    "markdown"
+  ]
 }

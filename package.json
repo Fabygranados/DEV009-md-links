@@ -18,6 +18,7 @@
   "dependencies": {
     "fs": "^0.0.1-security",
     "jest": "^29.6.4",
+    "linkify-it": "^4.0.1",
     "markdown-it": "^13.0.1",
     "test": "^3.3.0"
   },

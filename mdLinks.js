@@ -10,3 +10,4 @@ mdLinks(dirPath)
   .catch((error) => {
     console.log(error);
   });
+  

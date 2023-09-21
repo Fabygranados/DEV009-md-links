@@ -462,7 +462,7 @@ Laboratoria/curriculum-parser`.
 * [Acerca de Node.js - Documentación oficial](https://nodejs.org/es/about/)
 * [¿Qué es Nodejs? Javascript en el Servidor - Fazt en YouTube](https://www.youtube.com/watch?v=WgSc1nv_4Gw)
 * [Asíncronía en js](https://carlosazaustre.es/manejando-la-asincronia-en-javascript)
-* [Patrones para coincidencia de caracteres con expresiones regulares - mozilla.org](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Regular_expressions)
+* [Patrones para coincidencia de caracteres con expresiones regulares - mozilla.org](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Regular_expressios)
 
 ## 9. Para pedir project feedback
 

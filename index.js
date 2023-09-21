@@ -1,56 +1,26 @@
-const fs = require("fs");
-const path = require('path');
+const { convertAbsolutePath, existsPath, valLinks, markdownContent } = require('./data');
+const tFunk = require('tfunk');
 
-
-const mdLinks = (dirPath) => {
-  const absolutePath = convertAbsolutePath(dirPath);
+function mdLinks(relPath, options) {
   return new Promise((resolve, reject) => {
-    if (fs.existsSync(absolutePath)) {
-      const isDirectory = fs.lstatSync(absolutePath).isDirectory();
-
-      if (!isDirectory) {
-        const fileExtension = path.extname(dirPath);
-        if (fileExtension !== '.md') {
-          reject('(⓿_⓿) Upss!! ERROR!! (⓿_⓿) El archivo no es un Markdown');
+    const absolutePath = convertAbsolutePath(relPath); 
+    if (!existsPath(absolutePath)) {
+      reject(tFunk('{red:Esta ruta no existe (^///^)(^///^)}'));
+      return;
+    } 
+    markdownContent(absolutePath)
+      .then((links) => {
+        if (links.length > 0) {
+          resolve(options ? valLinks(links) : links);
         } else {
-          const markdownContent = fs.readFileSync(absolutePath, 'utf8');
-          const links = extractLinks(markdownContent);
-          const link = links.map((link) => ({ href: link.href, text: link.text }));
-          console.log(markdownContent, link);
-          resolve(absolutePath);
+          reject(tFunk('{red: Ohhh nooo!!! {blue:(⓿_⓿)(⓿_⓿)}  Este documento no contiene links!!'));
         }
-      } else {
-        const files = fs.readdirSync(absolutePath);
-        const mdFiles = files.filter((file) => {
-          const fileExtension = path.extname(file);
-          return fileExtension === '.md';
-        });
-        const mdFileMap = mdFiles.map((file) => ({ href: file, text: file }));
-        resolve(mdFileMap);
-      }
-    } else {
-      reject('_______(⓿_⓿) Upss!! ERROR!! (⓿_⓿)_______');
-    }
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   });
-};
-function convertAbsolutePath(relPath) {
-  return path.resolve(relPath);
-}
-function extractLinks(markdownContent) {
-  const linkRegex = /\[([^\]]+)\]\(([^)]+)\)(?!\s|$)/g;
-  const links = [];
-
-  let match;
-
-  while ((match = linkRegex.exec(markdownContent))) {
-    const text = match[1];
-    const href = match[2];
-    links.push({ href, text});
-  }
-  return links;
 }
 module.exports = {
-  mdLinks,
-  convertAbsolutePath,
-  extractLinks
+  mdLinks
 };

@@ -58,5 +58,32 @@ describe('convertAbsolutePath', () => {
       expect(result).toEqual([]);
     });
  }); 
+     it('debe retornar un array con los links encontrados', () => {
+      const links = [
+        { text: 'Link 1', href: 'http://example.com/link1', file: 'file1' },
+        { text: 'Link 2', href: 'http://example.com/link2', file: 'file2' },
+        { text: 'Link 3', href: 'http://example.com/link3', file: 'file3' }
+      ];
+
+      const expected = [
+        { text: 'Link 1', href: 'http://example.com/link1', file: 'file1', status: 404, statusText: 'Not Found' },
+        { text: 'Link 2', href: 'http://example.com/link2', file: 'file2', status: 404, statusText: 'Not Found' },
+        { text: 'Link 3', href: 'http://example.com/link3', file: 'file3', status: 404, statusText: 'Not Found' }
+      ];
+
+      return valLinks(links).then(result => {
+        expect(result).toEqual(expected);
+      });
+    });
+
+        it('debe retornar una array vacia cuando no hay links', () => {
+          const links = [];
+    
+          const expected = [];
+    
+          return valLinks(links).then(result => {
+            expect(result).toEqual(expected);
+          });
+        });
   
 

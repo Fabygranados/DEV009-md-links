@@ -16,11 +16,15 @@
     "commit": "24f5a51ee0a15f345b59fcd2ef44c3616abdfce5"
   },
   "dependencies": {
+    "axios": "^1.5.0",
+    "fetch": "^1.1.0",
     "fs": "^0.0.1-security",
     "jest": "^29.6.4",
     "linkify-it": "^4.0.1",
     "markdown-it": "^13.0.1",
-    "test": "^3.3.0"
+    "node-fetch": "^2.7.0",
+    "test": "^3.3.0",
+    "tfunk": "^4.0.0"
   },
   "description": "Herramienta para Devs MarkDown Links",
   "main": "index.js",
@@ -32,13 +36,13 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "\"github.com/Fabygranados/DEV009-md-links\""
+    "url": "github.com/Fabygranados/DEV009-md-links"
   },
   "keywords": [
     "markdown",
     "links",
     "links",
-    "npm",
-    "markdown"
-  ]
+    "npm"
+  ],
+  "devDependencies": {}
 }

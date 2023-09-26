@@ -29,7 +29,7 @@ const getPath = (relPath) => {
     const stat = fs.statSync(absolutePath);
 
     if (stat.isDirectory()) {
-      const sub = getPath(absolutePath);
+      const sub = getPath(absolutePath); // Recursividad
       allPaths.push(...sub);
     } else if (extension(absolutePath) === '.md') {
       allPaths.push(absolutePath);

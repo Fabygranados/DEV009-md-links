@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "axios": "^1.5.0",
+    "faby-granados": "github:Fabygranados/DEV009-md-links",
     "fetch": "^1.1.0",
     "fs": "^0.0.1-security",
     "jest": "^29.6.4",
@@ -25,6 +26,9 @@
     "node-fetch": "^2.7.0",
     "test": "^3.3.0",
     "tfunk": "^4.0.0"
+  },
+  "bin": {
+    "mdLinks": "./mdLinks.js"
   },
   "description": "Herramienta para Devs MarkDown Links",
   "main": "index.js",
@@ -43,6 +47,5 @@
     "links",
     "links",
     "npm"
-  ],
-  "devDependencies": {}
+  ]
 }

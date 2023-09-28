@@ -2,7 +2,11 @@
 ![md-links](MDLinks.gif)
 ## Índice
 
-* [1. Introduccion](#1-Introduccion)
+* [1. Introduccion](#1-introduccion)
+* [2. Caracteristicas del Proyecto](#2-caracteristicas-del-proyecto)
+* [3. Instalacion](#3-instalación)
+* [4. Uso](#4-uso)
+* [5. Diagrama del proyecto](#5-diagrama-de-flujo-del-proyecto)
 ***
 
 ## 1. Introduccion
@@ -22,28 +26,49 @@ herramienta usando [Node.js](https://nodejs.org/), que lea y analice archivos
 en formato `Markdown`, para verificar los links que contengan y reportar
 algunas estadísticas.
 
-## 9. Para pedir project feedback
+## 2. Caracteristicas del proyecto
+Este proyecto esta desarrollado con Node.js, JS y dependecias como TFunk. Se utilizo Fetch para validar los enlaces HTTP y sus estados.
+Esta herrramienta permite analizar archivos Markdown en un directorio/subdirectorios donde puede encontrar enlaces contenidos en ello. En resumen: 
 
-* [ ] Un board en github projects con el backlog para la implementación de la
-  librería.
+- Extrae información sobre los enlaces, como la URL, el texto del enlace y la ruta donde se encuentra.
+- Busca dentro de directorios y sudirevtorios
+- Obtener estadísticas sobre los enlaces encontrados, como el total de enlaces, enlaces únicos y enlaces rotos.
+- Valida enlaces HTTP verificando su estado.
 
-* [ ] un `README.md` con documentación técnica de la librería y una guía de
-  uso e instalación de la librería.
 
-* [ ] un API `mdLinks(path, validate)` con los siguientes requisitos
-  (Hito 1 y 2 son los mínimos):
+## 3. Instalación
 
-  - El módulo debe exportar una función que cumpla con la interfaz (API)
-    requerida. (Hito 1)
-  - Deberá implementar el soporte para archivos individuales. (Hito 1)
-  - Deberá implementar la funcionalidad de validación. (Hitos 1 y 2)
-  - Deberá ofrecer soporte para directorios. (Hitos 1 al 3)
-  - Deberá ofrecer soporte para directorios que pueden contener otros
-    directorios. (Hitos 1 al 5)
+Para instalar este paquete debe ejecutarse lo siguente en la terminal:
 
-* [ ] un CLI (Command Line Interface) que se ejecuta sin errores
-  y tiene el output esperado. Además acepta los parámetros
-  `--validate` y `--stats`. Y expone un ejecutable
-  md-links en el path (configurado en el `package.json`)
-* [ ] Pasa tests y linters (`npm test`). Tests unitarios cubren un mínimo
-  del 70% de coverage tests, es decir statements, functions, lines y branches.
+```
+npm i FabyGranados/DEV009-md-links
+```
+## 4. Uso
+
+Una vez que mdLinks esté instalado, puedes usarlo para analizar un archivo Markdown con el siguiente comando:
+
+```
+mdLinks path-file-o-directorio
+```
+Este comando mostrará en la terminal los enlaces encontrados en el archivo o directorio especificado.
+
+### Opciones
+
+mdLinks admite las siguientes opciones:
+
+- --validate: Verifica el estado de los enlaces encontrados.
+- --stats: Obtiene estadísticas sobre los enlaces encontrados.
+
+### Ejemplos
+- Uso --stats:
+![stats](image-1.png)
+
+- Uso con --validate:
+![validate](image-2.png)
+
+- Uso con ambos --validate --stats:
+![validateStats](image-3.png)
+
+## 5. Diagrama de flujo del Proyecto
+- Diagrama de flujo
+  ![Diagrama](image.png)
